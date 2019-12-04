@@ -4,6 +4,7 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="CSS/normalize.css">
     <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Chewy|Fredericka+the+Great&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/cf85b609ae.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="CSS/style.css">
     <title>Trivia Game</title>
   </head>
@@ -20,9 +21,15 @@
         <h1>Trivia Game</h1>
       </section>
       <section class='game'>
+        <div class="chooseCategory">
+          <h2>Choose your Category</h2>
+          <p>Pick which category of questions you would rather answer.</p>
+          <a href="#" id="choiceGame" class='choose'><i class="fas fa-gamepad"></i></a>
+          <a href="#" id="choiceMusic" class="choose"><i class="fas fa-music"></i></a>
+        </div>
         <form id="form" action="index.html" method="post">
           <input type="text" name="pName" class ='pName' value="Enter Your Name">
-          <input type="submit" name="" value="Click">
+          <input type="submit" name="" value="Let us Begin">
         </form>
       </section>
     </body>

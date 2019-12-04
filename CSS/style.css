@@ -4,6 +4,13 @@ body {
   font-family: 'Fredericka the Great', cursive;
   text-align: center;
 }
+.game {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 .logo {
   font-size: 40px;
   font-weight: bold;
@@ -19,7 +26,18 @@ body {
   align-items: center;
   font-family: 'Chewy', cursive;
 }
+.chooseCategory {
+  background-color: black;
+  color: antiquewhite;
+  width: 500px;
+}
+.choose {
+  color: antiquewhite;
+  margin: 20px;
+  font-size: 50px;
+}
 
+/* Rotates Label*/
 @keyframes rotation {
   from {
     transform: rotate(0deg);
