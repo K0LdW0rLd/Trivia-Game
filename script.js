@@ -2,7 +2,6 @@ console.log('I Work')
 //Change the player name upon click
 let form = document.querySelector('#form');
 const formInput = form.querySelector('input.pName');
-
 form.addEventListener('submit', evt => {
   evt.preventDefault();
   document.querySelector('#playerName').innerHTML = formInput.value
@@ -17,6 +16,7 @@ class Question {
     this.correctAnswer = correctAnswer
   }
 }
+//Add images to the Answers
 const vgQuestions = [
   new Question ('Doctor Ivo “Eggman” Robotnik is the enemy of which video game character?', ['Sonic the Hedgehog','Mario', 'Pac-Man', 'Kirby'], 'Sonic the Hedgehog'),
   new Question ('The Vault Dweller is the protagonist of which video game?', ['Oblivion','Final Fantasy', 'Fallout', 'Persona'], 'Fallout'),
@@ -29,7 +29,7 @@ const vgQuestions = [
   new Question ('What was the name of the company that created "The Last of Us"?', ['Sega','Bungie', 'Naughty Dog', 'SquareEnix'], 'Naughty Dog'),
   new Question ('In what series of games you can find the characters “Lanturn,” “Phantump” and “Ursaring”?', ['Sonic','Final Fantasy', 'Legend of Zelda', 'Pokemon'], 'Pokemon'),
 ]
-console.log(vgQuestions)
+console.log(vgQuestions) //Delete when done
 const musicQuestions = [
   new Question ('Whose 2013 world tour was called "The Mrs Carter Show"?', ['Lil Wayne','P Diddy', 'Beyonce', 'Jay-Z'], 'Beyonce'),
   new Question ('What symphony\'s last movement includes a setting of Schiller\'s poem "Hymn to Joy"?', ['Beethoven\'s Ninth', 'Bruckner\'s Eight', 'Mahler\'s Tenth', 'Mozart\'s 40th'], 'Beethoven\'s Ninth'),
@@ -42,7 +42,7 @@ const musicQuestions = [
   new Question ('I Want It That Way was a hit single from what 1999 Backstreet Boys album?', ['Millennium', 'Never Gone', 'Black & Blue', 'Unbreakable'], 'Millennium'),
   new Question ('In VH1\'s "Songs of the 90\'s", which song was voted #1?', ['Nirvana\'s "Smells Like Teen Spirit"', 'Tupac\'s "I Ain\'t Mad At Cha"', 'Beck\'s "I\'m A Loser"', 'Oasis\' "Wonderwall"'], 'Nirvana\'s "Smells Like Teen Spirit"'),
 ]
-console.log(musicQuestions)
+console.log(musicQuestions) //Delete when done
 
 class Quiz {
   constructor() {
@@ -61,3 +61,30 @@ vgameQuiz.addQuiz(vgQuestions);
 const musicQuiz = new Quiz()
 console.log(musicQuiz) // delete once done
 musicQuiz.addQuiz(musicQuestions);
+//Add event listener to listen for Icon click
+const choiceGame = document.querySelector('#choiceGame')
+const choiceMusic = document.querySelector('#choiceMusic')
+//For Video Games
+choiceGame.addEventListener('click', evt =>{
+  evt.preventDefault();
+  document.querySelector('.chooseCategory').style.display = 'none';
+  document.querySelector('#question').innerHTML = vgameQuiz.questions[0][0].questions;
+  document.querySelector('#a').innerHTML = vgameQuiz.questions[0][0].answers[0];
+  document.querySelector('#b').innerHTML = vgameQuiz.questions[0][0].answers[1];
+  document.querySelector('#c').innerHTML = vgameQuiz.questions[0][0].answers[2];
+  document.querySelector('#d').innerHTML = vgameQuiz.questions[0][0].answers[3];
+  document.querySelector('.trivia').style.display = 'block';
+  document.querySelector('.answers').style.display = 'flex';
+})
+//For Music
+choiceMusic.addEventListener('click', evt =>{
+  evt.preventDefault();
+  document.querySelector('.chooseCategory').style.display = 'none';
+  document.querySelector('#question').innerHTML = musicQuiz.questions[0][0].questions;
+  document.querySelector('#a').innerHTML = musicQuiz.questions[0][0].answers[0];
+  document.querySelector('#b').innerHTML = musicQuiz.questions[0][0].answers[1];
+  document.querySelector('#c').innerHTML = musicQuiz.questions[0][0].answers[2];
+  document.querySelector('#d').innerHTML = musicQuiz.questions[0][0].answers[3];
+  document.querySelector('.trivia').style.display = 'block';
+  document.querySelector('.answers').style.display = 'flex';
+})

@@ -47,9 +47,18 @@ body {
 }
 
 .trivia {
-  display: ; /*Set Display to None*/
+  display: none; /*Set Display to None*/
   padding: 10px;
   color: darkviolet;
+}
+/*Have them grow when hovered over*/
+.icon {
+}
+
+.answers {
+  display: none;
+  justify-content: space-around;
+  padding: 10px;
 }
 
 /* Rotates Label*/
