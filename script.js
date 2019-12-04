@@ -6,4 +6,5 @@ const formInput = form.querySelector('input.pName');
 form.addEventListener('submit', evt => {
   evt.preventDefault();
   document.querySelector('#playerName').innerHTML = formInput.value
+  document.querySelector('form').style.display = 'none';
 })
