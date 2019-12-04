@@ -10,13 +10,6 @@ form.addEventListener('submit', evt => {
   document.querySelector('.chooseCategory').style.display = 'flex';
 })
 //Create a class for the quiz and the questions
-class Quiz {
-  constructor(questions) {
-    this.questions = questions
-    this.score = 0
-  }
-}
-
 class Question {
   constructor(questions, answers, correctAnswer) {
     this.questions = questions
@@ -24,7 +17,6 @@ class Question {
     this.correctAnswer = correctAnswer
   }
 }
-
 const vgQuestions = [
   new Question ('Doctor Ivo “Eggman” Robotnik is the enemy of which video game character?', ['Sonic the Hedgehog','Mario', 'Pac-Man', 'Kirby'], 'Sonic the Hedgehog'),
   new Question ('The Vault Dweller is the protagonist of which video game?', ['Oblivion','Final Fantasy', 'Fallout', 'Persona'], 'Fallout'),
@@ -51,3 +43,21 @@ const musicQuestions = [
   new Question ('In VH1\'s "Songs of the 90\'s", which song was voted #1?', ['Nirvana\'s "Smells Like Teen Spirit"', 'Tupac\'s "I Ain\'t Mad At Cha"', 'Beck\'s "I\'m A Loser"', 'Oasis\' "Wonderwall"'], 'Nirvana\'s "Smells Like Teen Spirit"'),
 ]
 console.log(musicQuestions)
+
+class Quiz {
+  constructor() {
+    this.questions = []
+    this.score = 0
+  }
+  addQuiz(stuff){
+    this.questions.push(stuff)
+  }
+}
+//Create Video Game Class and and the questins to it
+const vgameQuiz = new Quiz()
+console.log(vgameQuiz) // delete once done
+vgameQuiz.addQuiz(vgQuestions);
+//Create Video Game Class and and the questins to it
+const musicQuiz = new Quiz()
+console.log(musicQuiz) // delete once done
+musicQuiz.addQuiz(musicQuestions);

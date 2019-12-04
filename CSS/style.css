@@ -42,8 +42,14 @@ body {
   opacity: 0;
   animation-name: fadeIn;
   animation-delay: 1s;
-  animation-duration: 5s;
+  animation-duration: 3s;
   animation-fill-mode: forwards;
+}
+
+.trivia {
+  display: ; /*Set Display to None*/
+  padding: 10px;
+  color: darkviolet;
 }
 
 /* Rotates Label*/
