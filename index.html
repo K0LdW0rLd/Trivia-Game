@@ -3,16 +3,27 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="CSS/normalize.css">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Chewy|Fredericka+the+Great&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="CSS/style.css">
     <title>Trivia Game</title>
   </head>
   <body>
     <header>
-
+      <section class = 'nav'>
+        <div id="playerName">Player's Name</div>
+        <div class="logo">?</div>
+        <div id='playerScore'>Player's Score</div>
+      </section>
     </header>
     <body>
       <section class='title'>
         <h1>Trivia Game</h1>
+      </section>
+      <section class='game'>
+        <form id="form" action="index.html" method="post">
+          <input type="text" name="pName" class ='pName' value="Enter Your Name">
+          <input type="submit" name="" value="Click">
+        </form>
       </section>
     </body>
     <footer>

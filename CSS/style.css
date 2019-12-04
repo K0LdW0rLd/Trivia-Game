@@ -1,4 +1,30 @@
 body {
   background-color: aqua;
   color: azure;
+  font-family: 'Fredericka the Great', cursive;
+  text-align: center;
+}
+.logo {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: 'Abril Fatface', cursive;
+  animation: rotation 6s infinite linear;
+}
+.nav {
+  background-color: deepskyblue;
+  padding: 10px;
+  font-size: 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: 'Chewy', cursive;
+}
+
+@keyframes rotation {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(359deg);
+  }
 }
