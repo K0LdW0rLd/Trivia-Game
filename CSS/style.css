@@ -30,11 +30,20 @@ body {
   background-color: black;
   color: antiquewhite;
   width: 500px;
+  padding: 20px;
+  display: none;
+  flex-direction: column;
 }
+
 .choose {
   color: antiquewhite;
   margin: 20px;
   font-size: 50px;
+  opacity: 0;
+  animation-name: fadeIn;
+  animation-delay: 1s;
+  animation-duration: 5s;
+  animation-fill-mode: forwards;
 }
 
 /* Rotates Label*/
@@ -44,5 +53,18 @@ body {
   }
   to {
     transform: rotate(359deg);
+  }
+}
+
+/*Fade In category*/
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: .5;
+  }
+  100% {
+    opacity: 1;
   }
 }
