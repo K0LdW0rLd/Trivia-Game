@@ -108,13 +108,15 @@ function vgrightOrWrong(){
   answer.forEach(i => {
     i.addEventListener('click', evt =>{
       evt.preventDefault();
-      if (evt.target.innerHTML === vgameQuiz.questions[0][0].correctAnswer) {
-        alert('Correct Answer');
+      if (vgameQuiz.questions[0].length === 0) {
+        alert('Game over Your Score is ' + vgameQuiz.score)
+      } else if (evt.target.innerHTML === vgameQuiz.questions[0][0].correctAnswer) {
+        console.log('Correct Answer');
         vgameQuiz.score +=1;
         playerScore.innerHTML = 'Your Score ' + vgameQuiz.score;
         return vgRestOfQuestions()
       } else if (evt.target.innerHTML !== vgameQuiz.questions[0][0].correctAnswer) {
-        alert('Wrong answer the correct answer is ' + vgameQuiz.questions[0][0].correctAnswer);
+        console.log('Wrong answer the correct answer is ' + vgameQuiz.questions[0][0].correctAnswer);
         return vgRestOfQuestions()
       }
     })
@@ -125,13 +127,16 @@ function mrightOrWrong(){
   answer.forEach(i => {
     i.addEventListener('click', evt =>{
       evt.preventDefault();
-      if (evt.target.innerHTML === musicQuiz.questions[0][0].correctAnswer) {
-        alert('Correct Answer');
+      if (musicQuiz.questions[0].length <= 0) {
+        alert('Game over Your Score is ' + musicQuiz.score)
+      } else if (evt.target.innerHTML === musicQuiz.questions[0][0].correctAnswer) {
+        console.log('Correct Answer');
         musicQuiz.score +=1;
         playerScore.innerHTML = 'Your Score ' + musicQuiz.score;
-        musicQuiz.questions[0].shift()
+        return mRestOfQuestions()
       } else if(evt.target.innerHTML !== musicQuiz.questions[0][0].correctAnswer) {
-        alert('Wrong answer the correct answer is ' + musicQuiz.questions[0][0].correctAnswer);
+        console.log('Wrong answer the correct answer is ' + musicQuiz.questions[0][0].correctAnswer);
+        return mRestOfQuestions()
       }
     })
   })
@@ -148,6 +153,18 @@ function vgRestOfQuestions() {
       answer[i].innerHTML = vgameQuiz.questions[0][0].answers[i];
     }
     playerScore.innerHTML = 'Your Score ' + vgameQuiz.score;
+  }
+}
+function mRestOfQuestions() {
+  musicQuiz.questions[0].shift()
+  if (musicQuiz.questions[0].length <= 0) {
+    alert('Game over Your Score is ' + musicQuiz.score)
+  } else {
+    question.innerHTML = musicQuiz.questions[0][0].questions;
+    for(let i = 0; i < answer.length; i++){
+      answer[i].innerHTML = musicQuiz.questions[0][0].answers[i];
+    }
+    playerScore.innerHTML = 'Your Score ' + musicQuiz.score;
   }
 }
 
