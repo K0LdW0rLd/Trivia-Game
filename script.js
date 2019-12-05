@@ -61,27 +61,36 @@ const choiceGame = document.querySelector('#choiceGame')
 const choiceMusic = document.querySelector('#choiceMusic')
 const answerNodeList = document.querySelectorAll('#answer')
 const answer = Array.from(answerNodeList);
+const chooseCategory = document.querySelector('.chooseCategory');
+const question = document.querySelector('#question');
+const trivia = document.querySelector('.trivia');
+const answers= document.querySelector('.answers');
+const titleChange = document.querySelector('.titleChange');
+const playerScore = document.querySelector('#playerScore')
 //For Video Games
 choiceGame.addEventListener('click', evt =>{
   evt.preventDefault();
-  document.querySelector('.chooseCategory').style.display = 'none';
-  document.querySelector('#question').innerHTML = vgameQuiz.questions[0][0].questions;
+  chooseCategory.style.display = 'none';
+  question.innerHTML = vgameQuiz.questions[0][0].questions;
   for(let i = 0; i < answer.length; i++){
     answer[i].innerHTML = vgameQuiz.questions[0][0].answers[i];
   }
-  document.querySelector('.trivia').style.display = 'block';
-  document.querySelector('.answers').style.display = 'flex';
-  document.querySelector('.titleChange').innerHTML = 'Video Game Trivia';
+  trivia.style.display = 'block';
+  answers.style.display = 'flex';
+  titleChange.innerHTML = 'Video Game Trivia';
+  playerScore.innerHTML = 'Your Score ' + vgameQuiz.score;
   getAnswer();
 })
 //After console.log video-games run function
-// document.addEventListener('video-games',vgrightOrWrong())
 function vgrightOrWrong(){
   answer.forEach(i => {
     i.addEventListener('click', evt =>{
       evt.preventDefault();
       if (evt.target.innerHTML === vgameQuiz.questions[0][0].correctAnswer) {
         alert('Correct Answer');
+        vgameQuiz.score +=1;
+        playerScore.innerHTML = 'Your Score ' + vgameQuiz.score;
+        // vgameQuiz.questions[0].shift()
       } else if (evt.target.innerHTML !== vgameQuiz.questions[0][0].correctAnswer) {
         alert('Wrong answer the correct answer is ' + vgameQuiz.questions[0][0].correctAnswer);
       }
@@ -91,37 +100,41 @@ function vgrightOrWrong(){
 //For Music
 choiceMusic.addEventListener('click', evt =>{
   evt.preventDefault();
-  document.querySelector('.chooseCategory').style.display = 'none';
-  document.querySelector('#question').innerHTML = musicQuiz.questions[0][0].questions;
+  chooseCategory.style.display = 'none';
+  question.innerHTML = musicQuiz.questions[0][0].questions;
   for(let i = 0; i < answer.length; i++){
     answer[i].innerHTML = musicQuiz.questions[0][0].answers[i];
   }
-  document.querySelector('.trivia').style.display = 'block';
-  document.querySelector('.answers').style.display = 'flex';
-  document.querySelector('.titleChange').innerHTML = 'Music Trivia';
+  trivia.style.display = 'block';
+  answers.style.display = 'flex';
+  titleChange.innerHTML = 'Music Trivia';
+  playerScore.innerHTML = 'Your Score ' + musicQuiz.score;
   getAnswer();
 })
 //After console music runs
-// document.addEventListener('music', mrightOrWrong())
 function mrightOrWrong(){
   answer.forEach(i => {
     i.addEventListener('click', evt =>{
       evt.preventDefault();
       if (evt.target.innerHTML === musicQuiz.questions[0][0].correctAnswer) {
         alert('Correct Answer');
+        musicQuiz.score +=1;
+        playerScore.innerHTML = 'Your Score ' + musicQuiz.score;
+        // musicQuiz.questions[0].shift()
       } else if(evt.target.innerHTML !== musicQuiz.questions[0][0].correctAnswer) {
         alert('Wrong answer the correct answer is ' + musicQuiz.questions[0][0].correctAnswer);
       }
     })
   })
 }
-//runs depending on The title 
+//runs depending on The title
 function getAnswer(){
-  if (document.querySelector('.titleChange').innerHTML === 'Video Game Trivia') {
+  if (titleChange.innerHTML === 'Video Game Trivia') {
     vgrightOrWrong();
-  } else if (  document.querySelector('.titleChange').innerHTML === 'Music Trivia') {
+  } else if (titleChange.innerHTML === 'Music Trivia') {
     mrightOrWrong();
   }
 }
+
 
 //Create a Modal box that displays the correct answer
