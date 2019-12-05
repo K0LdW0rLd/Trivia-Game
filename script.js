@@ -79,24 +79,8 @@ choiceGame.addEventListener('click', evt =>{
   answers.style.display = 'flex';
   titleChange.innerHTML = 'Video Game Trivia';
   playerScore.innerHTML = 'Your Score ' + vgameQuiz.score;
-  getAnswer();
+  return getAnswer();
 })
-//After console.log video-games run function
-function vgrightOrWrong(){
-  answer.forEach(i => {
-    i.addEventListener('click', evt =>{
-      evt.preventDefault();
-      if (evt.target.innerHTML === vgameQuiz.questions[0][0].correctAnswer) {
-        alert('Correct Answer');
-        vgameQuiz.score +=1;
-        playerScore.innerHTML = 'Your Score ' + vgameQuiz.score;
-        // vgameQuiz.questions[0].shift()
-      } else if (evt.target.innerHTML !== vgameQuiz.questions[0][0].correctAnswer) {
-        alert('Wrong answer the correct answer is ' + vgameQuiz.questions[0][0].correctAnswer);
-      }
-    })
-  })
-}
 //For Music
 choiceMusic.addEventListener('click', evt =>{
   evt.preventDefault();
@@ -109,9 +93,34 @@ choiceMusic.addEventListener('click', evt =>{
   answers.style.display = 'flex';
   titleChange.innerHTML = 'Music Trivia';
   playerScore.innerHTML = 'Your Score ' + musicQuiz.score;
-  getAnswer();
+  return getAnswer();
 })
-//After console music runs
+//runs depending on The title
+function getAnswer(){
+  if (titleChange.innerHTML === 'Video Game Trivia') {
+    return vgrightOrWrong();
+  } else if (titleChange.innerHTML === 'Music Trivia') {
+    return mrightOrWrong();
+  }
+}
+//Function get answer runs this function
+function vgrightOrWrong(){
+  answer.forEach(i => {
+    i.addEventListener('click', evt =>{
+      evt.preventDefault();
+      if (evt.target.innerHTML === vgameQuiz.questions[0][0].correctAnswer) {
+        alert('Correct Answer');
+        vgameQuiz.score +=1;
+        playerScore.innerHTML = 'Your Score ' + vgameQuiz.score;
+        return vgRestOfQuestions()
+      } else if (evt.target.innerHTML !== vgameQuiz.questions[0][0].correctAnswer) {
+        alert('Wrong answer the correct answer is ' + vgameQuiz.questions[0][0].correctAnswer);
+        return vgRestOfQuestions()
+      }
+    })
+  })
+}
+//Function get answer runs this function
 function mrightOrWrong(){
   answer.forEach(i => {
     i.addEventListener('click', evt =>{
@@ -120,19 +129,25 @@ function mrightOrWrong(){
         alert('Correct Answer');
         musicQuiz.score +=1;
         playerScore.innerHTML = 'Your Score ' + musicQuiz.score;
-        // musicQuiz.questions[0].shift()
+        musicQuiz.questions[0].shift()
       } else if(evt.target.innerHTML !== musicQuiz.questions[0][0].correctAnswer) {
         alert('Wrong answer the correct answer is ' + musicQuiz.questions[0][0].correctAnswer);
       }
     })
   })
 }
-//runs depending on The title
-function getAnswer(){
-  if (titleChange.innerHTML === 'Video Game Trivia') {
-    vgrightOrWrong();
-  } else if (titleChange.innerHTML === 'Music Trivia') {
-    mrightOrWrong();
+
+//function that runs through the rest of the questions for each category
+function vgRestOfQuestions() {
+  vgameQuiz.questions[0].shift()
+  if (vgameQuiz.questions[0].length === 0) {
+    alert('Game over Your Score is ' + vgameQuiz.score)
+  } else {
+    question.innerHTML = vgameQuiz.questions[0][0].questions;
+    for(let i = 0; i < answer.length; i++){
+      answer[i].innerHTML = vgameQuiz.questions[0][0].answers[i];
+    }
+    playerScore.innerHTML = 'Your Score ' + vgameQuiz.score;
   }
 }
 
