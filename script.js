@@ -31,16 +31,16 @@ const vgQuestions = [
   new Question ('In what series of games you can find the characters “Lanturn,” “Phantump” and “Ursaring”?', ['Sonic','Final Fantasy', 'Legend of Zelda', 'Pokemon'], ['CSS/gamePhotos/sonic-game.jpeg', 'CSS/gamePhotos/Final-Fantasy-8.jpeg', 'CSS/gamePhotos/Links_Awakening.jpeg', 'CSS/gamePhotos/pokemon.webp'], 'Pokemon'),
 ]
 const musicQuestions = [
-  new Question ('Whose 2013 world tour was called "The Mrs Carter Show"?', ['Lil Wayne','P Diddy', 'Beyonce', 'Jay-Z'], 'Beyonce'),
-  new Question ('What symphony\'s last movement includes a setting of Schiller\'s poem "Hymn to Joy"?', ['Beethoven\'s Ninth', 'Bruckner\'s Eight', 'Mahler\'s Tenth', 'Mozart\'s 40th'], 'Beethoven\'s Ninth'),
-  new Question ('A song called "Party All the Time", released in 1985, reached the # 2 spot on Billboard\'s pop charts. Which Saturday Night Live actor recorded the song?', ['Garrett Morris', 'Eddie Murphy', 'Bill Murray', 'Joe Piscopo'], 'Eddie Murphy'),
-  new Question ('Who won American Idol Season One', ['Jennefer Hudson','Jordan Sparks', 'Ruben Studdard', 'Kelly Clarkson'], 'Kelly Clarkson'),
-  new Question ('Celine Dion\'s "My Heart Will Go On" was also known as the theme from what 1997 film?', ['Shakespeare In Love', 'Titanic','The Bodyguard', 'You\'ve Got Mail'], 'Titanic'),
-  new Question ('Which Civil Rights icon sued Outkast over a 1998 single that bore her name?', ['Myrlie Evers', 'Rosa Parks', 'Coretta Scott King', 'Fannie Lou Hamer'], 'Rosa Parks'),
-  new Question ('Dr. Dre\'s "Nuthin\' But a \'G\' Thang" featured an appearance by what up-and-coming rapper?', ['Jay-Z', 'Nas', 'Snoop Doggy Dogg', 'Tupac Shakur'], 'Snoop Doggy Dogg'),
-  new Question ('Which nine-minute, 1991 Guns N\' Roses hit was based on a short story by Del James?', ['Welcome To The Jungle', 'Sweet Child O\' Mine', 'Patience', 'November Rain'], 'November Rain'),
-  new Question ('I Want It That Way was a hit single from what 1999 Backstreet Boys album?', ['Millennium', 'Never Gone', 'Black & Blue', 'Unbreakable'], 'Millennium'),
-  new Question ('In VH1\'s "Songs of the 90\'s", which song was voted #1?', ['Nirvana\'s "Smells Like Teen Spirit"', 'Tupac\'s "I Ain\'t Mad At Cha"', 'Beck\'s "I\'m A Loser"', 'Oasis\' "Wonderwall"'], 'Nirvana\'s "Smells Like Teen Spirit"'),
+  new Question ('Whose 2013 world tour was called "The Mrs Carter Show"?', ['Lil Wayne','P Diddy', 'Beyonce', 'Jay-Z'], ['CSS/musicPhotos/lilwayne.jpeg', 'CSS/musicPhotos/pdiddy.jpeg', 'CSS/musicPhotos/beyonce.jpeg', 'CSS/musicPhotos/jayz.jpeg'], 'Beyonce'),
+  new Question ('What symphony\'s last movement includes a setting of Schiller\'s poem "Hymn to Joy"?', ['Beethoven\'s Ninth', 'Bruckner\'s Eight', 'Mahler\'s Tenth', 'Mozart\'s 40th'], ['CSS/musicPhotos/beethovan.jpeg', 'CSS/musicPhotos/bruckner.jpeg', 'CSS/musicPhotos/mahler.jpeg', 'CSS/musicPhotos/mozart.jpeg'], 'Beethoven\'s Ninth'),
+  new Question ('A song called "Party All the Time", released in 1985, reached the # 2 spot on Billboard\'s pop charts. Which Saturday Night Live actor recorded the song?', ['Garrett Morris', 'Eddie Murphy', 'Bill Murray', 'Joe Piscopo'], ['CSS/musicPhotos/garrett-morris.jpeg', 'CSS/musicPhotos/eddie-murphy.jpeg', 'CSS/musicPhotos/bill-murray.jpeg', 'CSS/musicPhotos/joe-piscopo.jpeg'], 'Eddie Murphy'),
+  new Question ('Who won American Idol Season One', ['Jennefer Hudson','Jordan Sparks', 'Ruben Studdard', 'Kelly Clarkson'], ['CSS/musicPhotos/jennifer-hudson.jpeg', 'CSS/musicPhotos/jsparks.jpeg', 'CSS/musicPhotos/rstuddard.jpeg', 'CSS/musicPhotos/Kelly.jpeg'], 'Kelly Clarkson'),
+  new Question ('Celine Dion\'s "My Heart Will Go On" was also known as the theme from what 1997 film?', ['Shakespeare In Love', 'Titanic','The Bodyguard', 'You\'ve Got Mail'], ['CSS/musicPhotos/sinLove.jpeg', 'CSS/musicPhotos/titanic.jpeg', 'CSS/musicPhotos/bodyguard.jpeg', 'CSS/musicPhotos/mail.jpeg'], 'Titanic'),
+  new Question ('Which Civil Rights icon sued Outkast over a 1998 single that bore her name?', ['Myrlie Evers', 'Rosa Parks', 'Coretta Scott King', 'Fannie Lou Hamer'], ['CSS/musicPhotos/mEvans.jpeg', 'CSS/musicPhotos/rParks.jpeg', 'CSS/musicPhotos/corettaKing.jpeg', 'CSS/musicPhotos/fHamer.jpeg'], 'Rosa Parks'),
+  new Question ('Dr. Dre\'s "Nuthin\' But a \'G\' Thang" featured an appearance by what up-and-coming rapper?', ['Jay-Z', 'Nas', 'Snoop Doggy Dogg', 'Tupac Shakur'], ['CSS/musicPhotos/jayz.jpeg', 'CSS/musicPhotos/nas.jpeg', 'CSS/musicPhotos/snoopdog.jpeg', 'CSS/musicPhotos/tupac.jpeg'], 'Snoop Doggy Dogg'),
+  new Question ('Which nine-minute, 1991 Guns N\' Roses hit was based on a short story by Del James?', ['Welcome To The Jungle', 'Sweet Child O\' Mine', 'Patience', 'November Rain'], [], 'November Rain'),
+  new Question ('I Want It That Way was a hit single from what 1999 Backstreet Boys album?', ['Millennium', 'Never Gone', 'Black & Blue', 'Unbreakable'], ['CSS/musicPhotos/millennium.jpeg', 'CSS/musicPhotos/never-gone.jpeg', 'CSS/musicPhotos/b&B.jpeg', 'CSS/musicPhotos/unbreakable.jpeg'], 'Millennium'),
+  new Question ('In VH1\'s "Songs of the 90\'s", which song was voted #1?', ['Nirvana\'s "Smells Like Teen Spirit"', 'Tupac\'s "I Ain\'t Mad At Cha"', 'Beck\'s "I\'m A Loser"', 'Oasis\' "Wonderwall"'], ['CSS/musicPhotos/nirvana.jpeg', 'CSS/musicPhotos/tupac.jpeg', 'CSS/musicPhotos/beck.jpeg', 'CSS/musicPhotos/oasis.jpeg'], 'Nirvana\'s "Smells Like Teen Spirit"'),
 ]
 class Quiz {
   constructor() {
@@ -92,6 +92,7 @@ choiceMusic.addEventListener('click', evt =>{
   question.innerHTML = musicQuiz.questions[0][0].questions;
   for(let i = 0; i < answer.length; i++){
     answer[i].innerHTML = musicQuiz.questions[0][0].answers[i];
+    imageAnswers[i].src = musicQuiz.questions[0][0].images[i];
   }
   trivia.style.display = 'block';
   answers.style.display = 'flex';
@@ -168,6 +169,7 @@ function mRestOfQuestions() {
     question.innerHTML = musicQuiz.questions[0][0].questions;
     for(let i = 0; i < answer.length; i++){
       answer[i].innerHTML = musicQuiz.questions[0][0].answers[i];
+      imageAnswers[i].src = musicQuiz.questions[0][0].images[i];
     }
     playerScore.innerHTML = 'Your Score ' + musicQuiz.score;
   }
