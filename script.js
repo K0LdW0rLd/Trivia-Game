@@ -20,15 +20,15 @@ class Question {
 //Add images to the Answers
 const vgQuestions = [
   new Question ('Doctor Ivo “Eggman” Robotnik is the enemy of which video game character?', ['Sonic the Hedgehog','Mario', 'Pac-Man', 'Kirby'], ['CSS/photos/Sonic.jpeg', 'CSS/photos/Mario.jpeg', 'CSS/photos/Pac-Man.jpeg', 'CSS/photos/Kirby.jpeg'], 'Sonic the Hedgehog'),
-  new Question ('The Vault Dweller is the protagonist of which video game?', ['Elder Scrolls','Final Fantasy', 'Fallout', 'Persona'], 'Fallout'),
-  new Question ('Retsu and Geki are computer-controlled opponents in which video game?', ['Tekken','Street Fighter', 'Dead or Alive', 'King of Fighter'], 'Street Fighter'),
-  new Question ('Mario first appeared in which classic video game?', ['Super Mario Bros.','Kirby\'s Dreamland', 'Legend of Zelda: Link\'s Awakening', 'Donkey Kong'], 'Donkey Kong'),
-  new Question ('The Umbrella Corporation is a pharmaceutical company in which horror video game franchise?', ['Resident Evil','Silent Hill', 'Outlast', 'Left 4 Dead'], 'Resident Evil'),
-  new Question ('Cloud Strife is the mercenary main character of which video game?', ['Tales of Abyss','Final Fantasy VII', 'Final Fantasy VIII', 'Tales of Symphonia'], 'Final Fantasy VII'),
-  new Question ('Desmond Miles is a major character from which video game series?', ['Prey','Resident Evil', 'Assassin\'s Creed', 'Grand Theft Auto'], 'Assassin\'s Creed'),
-  new Question ('Which seventh generation handheld gaming console was released in North America on the 24th March, 2005?', ['Nintendo 3DS','Gameboy SP', 'Nintendo DS', 'The Playstation Portable'], 'The Playstation Portable'),
-  new Question ('What was the name of the company that created "The Last of Us"?', ['Sega','Bungie', 'Naughty Dog', 'SquareEnix'], 'Naughty Dog'),
-  new Question ('In what series of games you can find the characters “Lanturn,” “Phantump” and “Ursaring”?', ['Sonic','Final Fantasy', 'Legend of Zelda', 'Pokemon'], 'Pokemon'),
+  new Question ('The Vault Dweller is the protagonist of which video game?', ['Elder Scrolls','Final Fantasy', 'Fallout', 'Persona'], ['CSS/photos/Elder-Scrolls.jpeg', 'CSS/photos/Final-Fantasy.jpeg', 'CSS/photos/Fallout.jpeg', 'CSS/photos/Persona.jpeg'], 'Fallout'),
+  new Question ('Retsu and Geki are computer-controlled opponents in which video game?', ['Tekken','Street Fighter', 'Dead or Alive', 'King of Fighter'], ['CSS/photos/Tekken.jpeg', 'CSS/photos/Street-Fighter.jpeg', 'CSS/photos/DoA.jpeg', 'CSS/photos/KoF.jpeg'], 'Street Fighter'),
+  new Question ('Mario first appeared in which classic video game?', ['Super Mario Bros.','Kirby\'s Dreamland', 'Legend of Zelda: Link\'s Awakening', 'Donkey Kong'], ['CSS/photos/Super-Mario-Bros.png', 'CSS/photos/Kirby\'s-dreamland.jpeg', 'CSS/photos/Links_Awakening.jpeg', 'CSS/photos/DonkeyKong-Game.jpeg'], 'Donkey Kong'),
+  new Question ('The Umbrella Corporation is a pharmaceutical company in which horror video game franchise?', ['Resident Evil','Silent Hill', 'Outlast', 'Left 4 Dead'], ['CSS/photos/Resident-Evil.jpeg', 'CSS/photos/Silent-Hill.jpeg', 'CSS/photos/Outlast.jpeg', 'CSS/photos/Left4Dead.jpeg'], 'Resident Evil'),
+  new Question ('Cloud Strife is the mercenary main character of which video game?', ['Tales of Abyss','Final Fantasy VII', 'Final Fantasy VIII', 'Tales of Symphonia'], ['CSS/photos/Tales-of-Abyss.jpeg', 'CSS/photos/Final-Fantasy.jpeg', 'CSS/photos/Final-Fantasy-8.jpeg', 'CSS/photos/Tales-of-symphonia.jpeg'],'Final Fantasy VII'),
+  new Question ('Desmond Miles is a major character from which video game series?', ['Prey','Resident Evil', 'Assassin\'s Creed', 'Grand Theft Auto'], ['CSS/photos/prey.jpeg', 'CSS/photos/Resident-Evil.jpeg', 'CSS/photos/Assassins-creed.jpeg', 'CSS/photos/GTA.jpeg'], 'Assassin\'s Creed'),
+  new Question ('Which seventh generation handheld gaming console was released in North America on the 24th March, 2005?', ['Nintendo 3DS','Gameboy SP', 'Nintendo DS', 'The Playstation Portable'], ['CSS/photos/nintendo3ds.jpeg', 'CSS/photos/gameboySP.jpeg', 'CSS/photos/nintendods.jpeg', 'CSS/photos/psp.jpeg'], 'The Playstation Portable'),
+  new Question ('What was the name of the company that created "The Last of Us"?', ['Sega','Bungie', 'Naughty Dog', 'SquareEnix'], ['CSS/photos/sega.png', 'CSS/photos/bungie.png', 'CSS/photos/naughtydog.jpeg', 'CSS/photos/squareEnix.png'], 'Naughty Dog'),
+  new Question ('In what series of games you can find the characters “Lanturn,” “Phantump” and “Ursaring”?', ['Sonic','Final Fantasy', 'Legend of Zelda', 'Pokemon'], ['CSS/photos/sonic-game.jpeg', 'CSS/photos/Final-Fantasy-8.jpeg', 'CSS/photos/Links_Awakening.jpeg', 'CSS/photos/pokemon.webp'], 'Pokemon'),
 ]
 const musicQuestions = [
   new Question ('Whose 2013 world tour was called "The Mrs Carter Show"?', ['Lil Wayne','P Diddy', 'Beyonce', 'Jay-Z'], 'Beyonce'),
@@ -155,6 +155,7 @@ function vgRestOfQuestions() {
     question.innerHTML = vgameQuiz.questions[0][0].questions;
     for(let i = 0; i < answer.length; i++){
       answer[i].innerHTML = vgameQuiz.questions[0][0].answers[i];
+      imageAnswers[i].src = vgameQuiz.questions[0][0].images[i];
     }
     playerScore.innerHTML = 'Your Score ' + vgameQuiz.score;
   }

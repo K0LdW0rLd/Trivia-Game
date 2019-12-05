@@ -71,7 +71,8 @@ img {
 .margin {
   display: flex;
   flex-flow: column;
-  margin: 5px;
+  justify-content: space-around;
+  margin: 20px;
 }
 
 /* Rotates Label*/
