@@ -64,27 +64,43 @@ musicQuiz.addQuiz(musicQuestions);
 //Add event listener to listen for Icon click
 const choiceGame = document.querySelector('#choiceGame')
 const choiceMusic = document.querySelector('#choiceMusic')
+const answerNodeList = document.querySelectorAll('#answer')
+const answer = Array.from(answerNodeList);
 //For Video Games
 choiceGame.addEventListener('click', evt =>{
   evt.preventDefault();
   document.querySelector('.chooseCategory').style.display = 'none';
   document.querySelector('#question').innerHTML = vgameQuiz.questions[0][0].questions;
-  document.querySelector('#a').innerHTML = vgameQuiz.questions[0][0].answers[0];
-  document.querySelector('#b').innerHTML = vgameQuiz.questions[0][0].answers[1];
-  document.querySelector('#c').innerHTML = vgameQuiz.questions[0][0].answers[2];
-  document.querySelector('#d').innerHTML = vgameQuiz.questions[0][0].answers[3];
+  for(let i = 0; i < answer.length; i++){
+    answer[i].innerHTML = vgameQuiz.questions[0][0].answers[i];
+  }
   document.querySelector('.trivia').style.display = 'block';
   document.querySelector('.answers').style.display = 'flex';
+  console.log('video games ready')
 })
+//After click
+//For Each method that runs through it
+// const question = document.querySelector('#question')//Maybe not needed anymore
+// document.addEventListener('video games ready', evt =>{
+//   for(let i = 0; i < answer.length; i++){
+//     answer[i].addEventListener('click', evt =>{
+//       if (evt.target.innerHTML === vgameQuiz.questions[0][0].correctAnswer) {
+//         alert('Correct Answer');
+//       } else if (evt.target.innerHTML!== vgameQuiz.questions[0][0].correctAnswer) {
+//         alert('Wrong Answer');
+//       }
+//     })
+//   }
+// })
 //For Music
 choiceMusic.addEventListener('click', evt =>{
   evt.preventDefault();
   document.querySelector('.chooseCategory').style.display = 'none';
   document.querySelector('#question').innerHTML = musicQuiz.questions[0][0].questions;
-  document.querySelector('#a').innerHTML = musicQuiz.questions[0][0].answers[0];
-  document.querySelector('#b').innerHTML = musicQuiz.questions[0][0].answers[1];
-  document.querySelector('#c').innerHTML = musicQuiz.questions[0][0].answers[2];
-  document.querySelector('#d').innerHTML = musicQuiz.questions[0][0].answers[3];
+  for(let i = 0; i < answer.length; i++){
+    answer[i].innerHTML = musicQuiz.questions[0][0].answers[i];
+  }
   document.querySelector('.trivia').style.display = 'block';
   document.querySelector('.answers').style.display = 'flex';
+  console.log('music ready')
 })
