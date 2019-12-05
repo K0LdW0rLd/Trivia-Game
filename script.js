@@ -19,7 +19,7 @@ class Question {
 //Add images to the Answers
 const vgQuestions = [
   new Question ('Doctor Ivo “Eggman” Robotnik is the enemy of which video game character?', ['Sonic the Hedgehog','Mario', 'Pac-Man', 'Kirby'], 'Sonic the Hedgehog'),
-  new Question ('The Vault Dweller is the protagonist of which video game?', ['Oblivion','Final Fantasy', 'Fallout', 'Persona'], 'Fallout'),
+  new Question ('The Vault Dweller is the protagonist of which video game?', ['Elder Scrolls','Final Fantasy', 'Fallout', 'Persona'], 'Fallout'),
   new Question ('Retsu and Geki are computer-controlled opponents in which video game?', ['Tekken','Street Fighter', 'Dead or Alive', 'King of Fighter'], 'Street Fighter'),
   new Question ('Mario first appeared in which classic video game?', ['Super Mario Bros.','Kirby\'s Dreamland', 'Legend of Zelda: Link\'s Awakening', 'Donkey Kong'], 'Donkey Kong'),
   new Question ('The Umbrella Corporation is a pharmaceutical company in which horror video game franchise?', ['Resident Evil','Silent Hill', 'Outlast', 'Left 4 Dead'], 'Resident Evil'),
