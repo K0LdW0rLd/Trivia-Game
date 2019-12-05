@@ -29,7 +29,6 @@ const vgQuestions = [
   new Question ('What was the name of the company that created "The Last of Us"?', ['Sega','Bungie', 'Naughty Dog', 'SquareEnix'], 'Naughty Dog'),
   new Question ('In what series of games you can find the characters “Lanturn,” “Phantump” and “Ursaring”?', ['Sonic','Final Fantasy', 'Legend of Zelda', 'Pokemon'], 'Pokemon'),
 ]
-console.log(vgQuestions) //Delete when done
 const musicQuestions = [
   new Question ('Whose 2013 world tour was called "The Mrs Carter Show"?', ['Lil Wayne','P Diddy', 'Beyonce', 'Jay-Z'], 'Beyonce'),
   new Question ('What symphony\'s last movement includes a setting of Schiller\'s poem "Hymn to Joy"?', ['Beethoven\'s Ninth', 'Bruckner\'s Eight', 'Mahler\'s Tenth', 'Mozart\'s 40th'], 'Beethoven\'s Ninth'),
@@ -42,8 +41,6 @@ const musicQuestions = [
   new Question ('I Want It That Way was a hit single from what 1999 Backstreet Boys album?', ['Millennium', 'Never Gone', 'Black & Blue', 'Unbreakable'], 'Millennium'),
   new Question ('In VH1\'s "Songs of the 90\'s", which song was voted #1?', ['Nirvana\'s "Smells Like Teen Spirit"', 'Tupac\'s "I Ain\'t Mad At Cha"', 'Beck\'s "I\'m A Loser"', 'Oasis\' "Wonderwall"'], 'Nirvana\'s "Smells Like Teen Spirit"'),
 ]
-console.log(musicQuestions) //Delete when done
-
 class Quiz {
   constructor() {
     this.questions = []
@@ -55,11 +52,9 @@ class Quiz {
 }
 //Create Video Game Class and and the questins to it
 const vgameQuiz = new Quiz()
-console.log(vgameQuiz) // delete once done
 vgameQuiz.addQuiz(vgQuestions);
 //Create Video Game Class and and the questins to it
 const musicQuiz = new Quiz()
-console.log(musicQuiz) // delete once done
 musicQuiz.addQuiz(musicQuestions);
 //Add event listener to listen for Icon click
 const choiceGame = document.querySelector('#choiceGame')
@@ -76,22 +71,23 @@ choiceGame.addEventListener('click', evt =>{
   }
   document.querySelector('.trivia').style.display = 'block';
   document.querySelector('.answers').style.display = 'flex';
-  console.log('video games ready')
+  document.querySelector('.titleChange').innerHTML = 'Video Game Trivia';
+  getAnswer();
 })
-//After click
-//For Each method that runs through it
-// const question = document.querySelector('#question')//Maybe not needed anymore
-// document.addEventListener('video games ready', evt =>{
-//   for(let i = 0; i < answer.length; i++){
-//     answer[i].addEventListener('click', evt =>{
-//       if (evt.target.innerHTML === vgameQuiz.questions[0][0].correctAnswer) {
-//         alert('Correct Answer');
-//       } else if (evt.target.innerHTML!== vgameQuiz.questions[0][0].correctAnswer) {
-//         alert('Wrong Answer');
-//       }
-//     })
-//   }
-// })
+//After console.log video-games run function
+// document.addEventListener('video-games',vgrightOrWrong())
+function vgrightOrWrong(){
+  answer.forEach(i => {
+    i.addEventListener('click', evt =>{
+      evt.preventDefault();
+      if (evt.target.innerHTML === vgameQuiz.questions[0][0].correctAnswer) {
+        alert('Correct Answer');
+      } else if (evt.target.innerHTML !== vgameQuiz.questions[0][0].correctAnswer) {
+        alert('Wrong answer the correct answer is ' + vgameQuiz.questions[0][0].correctAnswer);
+      }
+    })
+  })
+}
 //For Music
 choiceMusic.addEventListener('click', evt =>{
   evt.preventDefault();
@@ -102,5 +98,30 @@ choiceMusic.addEventListener('click', evt =>{
   }
   document.querySelector('.trivia').style.display = 'block';
   document.querySelector('.answers').style.display = 'flex';
-  console.log('music ready')
+  document.querySelector('.titleChange').innerHTML = 'Music Trivia';
+  getAnswer();
 })
+//After console music runs
+// document.addEventListener('music', mrightOrWrong())
+function mrightOrWrong(){
+  answer.forEach(i => {
+    i.addEventListener('click', evt =>{
+      evt.preventDefault();
+      if (evt.target.innerHTML === musicQuiz.questions[0][0].correctAnswer) {
+        alert('Correct Answer');
+      } else if(evt.target.innerHTML !== musicQuiz.questions[0][0].correctAnswer) {
+        alert('Wrong answer the correct answer is ' + musicQuiz.questions[0][0].correctAnswer);
+      }
+    })
+  })
+}
+//runs depending on The title 
+function getAnswer(){
+  if (document.querySelector('.titleChange').innerHTML === 'Video Game Trivia') {
+    vgrightOrWrong();
+  } else if (  document.querySelector('.titleChange').innerHTML === 'Music Trivia') {
+    mrightOrWrong();
+  }
+}
+
+//Create a Modal box that displays the correct answer
