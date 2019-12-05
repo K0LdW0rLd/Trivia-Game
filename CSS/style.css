@@ -2,7 +2,9 @@ body {
   background-color: aqua;
   color: azure;
   font-family: 'Fredericka the Great', cursive;
+  width: 100%;
   text-align: center;
+  margin: auto;
 }
 .game {
   display: flex;
@@ -59,6 +61,17 @@ body {
   display: none;
   justify-content: space-around;
   padding: 10px;
+}
+
+img {
+  width: 200px;
+  height: 250px;
+}
+
+.margin {
+  display: flex;
+  flex-flow: column;
+  margin: 5px;
 }
 
 /* Rotates Label*/

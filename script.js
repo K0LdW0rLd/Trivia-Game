@@ -10,15 +10,16 @@ form.addEventListener('submit', evt => {
 })
 //Create a class for the quiz and the questions
 class Question {
-  constructor(questions, answers, correctAnswer) {
+  constructor(questions, answers, images, correctAnswer) {
     this.questions = questions
     this.answers = answers
+    this.images = images
     this.correctAnswer = correctAnswer
   }
 }
 //Add images to the Answers
 const vgQuestions = [
-  new Question ('Doctor Ivo “Eggman” Robotnik is the enemy of which video game character?', ['Sonic the Hedgehog','Mario', 'Pac-Man', 'Kirby'], 'Sonic the Hedgehog'),
+  new Question ('Doctor Ivo “Eggman” Robotnik is the enemy of which video game character?', ['Sonic the Hedgehog','Mario', 'Pac-Man', 'Kirby'], ['CSS/photos/Sonic.jpeg', 'CSS/photos/Mario.jpeg', 'CSS/photos/Pac-Man.jpeg', 'CSS/photos/Kirby.jpeg'], 'Sonic the Hedgehog'),
   new Question ('The Vault Dweller is the protagonist of which video game?', ['Elder Scrolls','Final Fantasy', 'Fallout', 'Persona'], 'Fallout'),
   new Question ('Retsu and Geki are computer-controlled opponents in which video game?', ['Tekken','Street Fighter', 'Dead or Alive', 'King of Fighter'], 'Street Fighter'),
   new Question ('Mario first appeared in which classic video game?', ['Super Mario Bros.','Kirby\'s Dreamland', 'Legend of Zelda: Link\'s Awakening', 'Donkey Kong'], 'Donkey Kong'),
@@ -61,6 +62,8 @@ const choiceGame = document.querySelector('#choiceGame')
 const choiceMusic = document.querySelector('#choiceMusic')
 const answerNodeList = document.querySelectorAll('#answer')
 const answer = Array.from(answerNodeList);
+const imageNodeList = document.querySelectorAll('#answerImages')
+const imageAnswers = Array.from(imageNodeList);
 const chooseCategory = document.querySelector('.chooseCategory');
 const question = document.querySelector('#question');
 const trivia = document.querySelector('.trivia');
@@ -74,6 +77,7 @@ choiceGame.addEventListener('click', evt =>{
   question.innerHTML = vgameQuiz.questions[0][0].questions;
   for(let i = 0; i < answer.length; i++){
     answer[i].innerHTML = vgameQuiz.questions[0][0].answers[i];
+    imageAnswers[i].src = vgameQuiz.questions[0][0].images[i];
   }
   trivia.style.display = 'block';
   answers.style.display = 'flex';
