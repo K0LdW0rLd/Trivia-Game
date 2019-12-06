@@ -5,6 +5,12 @@ body {
   width: 100%;
   text-align: center;
   margin: auto;
+  background-image: none;
+  background-size: auto 100%;
+  background-position: center;
+}
+footer {
+  display: none;
 }
 .game {
   display: flex;
@@ -28,6 +34,17 @@ body {
   align-items: center;
   font-family: 'Chewy', cursive;
 }
+.title {
+  display: flex;
+  justify-content: center;
+}
+.titleChange {
+  color: darkred;
+  background-color: darkgray;
+  width: 35%;
+  border: black 2px dashed;
+}
+
 .chooseCategory {
   background-color: black;
   color: antiquewhite;
@@ -43,7 +60,7 @@ body {
   font-size: 50px;
   opacity: 0;
   animation-name: fadeIn;
-  animation-delay: 1s;
+  animation-delay: 0.5s;
   animation-duration: 3s;
   animation-fill-mode: forwards;
 }
@@ -52,6 +69,14 @@ body {
   display: none; /*Set Display to None*/
   padding: 10px;
   color: darkviolet;
+  align-items: center;
+  flex-direction: column;
+}
+.question {
+  background-color: aquamarine;
+  width: 50%;
+  width: 35%;
+  border: black 5px dotted;
 }
 /*Have them grow when hovered over*/
 .icon {
@@ -61,6 +86,13 @@ body {
   display: none;
   justify-content: space-around;
   padding: 10px;
+}
+
+.answer {
+  margin: 10px;
+  padding: 5px;
+  background: antiquewhite;
+  border: black 2px solid;
 }
 
 img {

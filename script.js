@@ -1,4 +1,3 @@
-console.log('I Work')
 //Change the player name upon click
 let form = document.querySelector('#form');
 const formInput = form.querySelector('input.pName');
@@ -79,12 +78,13 @@ let span = document.querySelector('#close');
 choiceGame.addEventListener('click', evt =>{
   evt.preventDefault();
   chooseCategory.style.display = 'none';
+  document.querySelector('body').style.backgroundImage = "url('CSS/gamePhotos/videoGameBackground.png')";
   question.innerHTML = vgameQuiz.questions[0][0].questions;
   for(let i = 0; i < answer.length; i++){
     answer[i].innerHTML = vgameQuiz.questions[0][0].answers[i];
     imageAnswers[i].src = vgameQuiz.questions[0][0].images[i];
   }
-  trivia.style.display = 'block';
+  trivia.style.display = 'flex';
   answers.style.display = 'flex';
   titleChange.innerHTML = 'Video Game Trivia';
   playerScore.innerHTML = 'Your Score ' + vgameQuiz.score;
@@ -94,12 +94,13 @@ choiceGame.addEventListener('click', evt =>{
 choiceMusic.addEventListener('click', evt =>{
   evt.preventDefault();
   chooseCategory.style.display = 'none';
+  document.querySelector('body').style.backgroundImage = "url('CSS/musicPhotos/musicBackground.jpeg')";
   question.innerHTML = musicQuiz.questions[0][0].questions;
   for(let i = 0; i < answer.length; i++){
     answer[i].innerHTML = musicQuiz.questions[0][0].answers[i];
     imageAnswers[i].src = musicQuiz.questions[0][0].images[i];
   }
-  trivia.style.display = 'block';
+  trivia.style.display = 'flex';
   answers.style.display = 'flex';
   titleChange.innerHTML = 'Music Trivia';
   playerScore.innerHTML = 'Your Score ' + musicQuiz.score;
@@ -120,6 +121,7 @@ function vgrightOrWrong(){
       evt.preventDefault();
       if (vgameQuiz.questions[0].length === 0) {
         alert('Game over Your Score is ' + vgameQuiz.score)
+        document.querySelector('footer').style.display = 'block'
       } else if (evt.target.innerHTML === vgameQuiz.questions[0][0].correctAnswer) {
         modal.style.display = "block";
         correctAnswer.innerHTML = vgameQuiz.questions[0][0].correctAnswer;
@@ -143,6 +145,7 @@ function mrightOrWrong(){
       evt.preventDefault();
       if (musicQuiz.questions[0].length <= 0) {
         alert('Game over Your Score is ' + musicQuiz.score)
+        document.querySelector('footer').style.display = 'block'
       } else if (evt.target.innerHTML === musicQuiz.questions[0][0].correctAnswer) {
         modal.style.display = "block";
         correctAnswer.innerHTML = musicQuiz.questions[0][0].correctAnswer;
@@ -165,6 +168,7 @@ function vgRestOfQuestions() {
   vgameQuiz.questions[0].shift()
   if (vgameQuiz.questions[0].length === 0) {
     alert('Game over Your Score is ' + vgameQuiz.score)
+    document.querySelector('footer').style.display = 'block'
   } else {
     question.innerHTML = vgameQuiz.questions[0][0].questions;
     for(let i = 0; i < answer.length; i++){
@@ -178,6 +182,7 @@ function mRestOfQuestions() {
   musicQuiz.questions[0].shift()
   if (musicQuiz.questions[0].length <= 0) {
     alert('Game over Your Score is ' + musicQuiz.score)
+    document.querySelector('footer').style.display = 'block'
   } else {
     question.innerHTML = musicQuiz.questions[0][0].questions;
     for(let i = 0; i < answer.length; i++){
@@ -187,9 +192,12 @@ function mRestOfQuestions() {
     playerScore.innerHTML = 'Your Score ' + musicQuiz.score;
   }
 }
-//Create a Modal box that displays the correct answer
-
 //Supposed to dissappear on click
 span.onclick = function() {
   modal.style.display = "none";
+}
+window.onclick = function(evt) {
+  if (evt.target == modal) {
+    modal.style.display = "none";
+  }
 }
