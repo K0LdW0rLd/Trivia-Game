@@ -38,7 +38,7 @@ const musicQuestions = [
   new Question ('Celine Dion\'s "My Heart Will Go On" was also known as the theme from what 1997 film?', ['Shakespeare In Love', 'Titanic','The Bodyguard', 'You\'ve Got Mail'], ['CSS/musicPhotos/sinLove.jpeg', 'CSS/musicPhotos/titanic.jpeg', 'CSS/musicPhotos/bodyguard.jpeg', 'CSS/musicPhotos/mail.jpeg'], 'Titanic'),
   new Question ('Which Civil Rights icon sued Outkast over a 1998 single that bore her name?', ['Myrlie Evers', 'Rosa Parks', 'Coretta Scott King', 'Fannie Lou Hamer'], ['CSS/musicPhotos/mEvans.jpeg', 'CSS/musicPhotos/rParks.jpeg', 'CSS/musicPhotos/corettaKing.jpeg', 'CSS/musicPhotos/fHamer.jpeg'], 'Rosa Parks'),
   new Question ('Dr. Dre\'s "Nuthin\' But a \'G\' Thang" featured an appearance by what up-and-coming rapper?', ['Jay-Z', 'Nas', 'Snoop Doggy Dogg', 'Tupac Shakur'], ['CSS/musicPhotos/jayz.jpeg', 'CSS/musicPhotos/nas.jpeg', 'CSS/musicPhotos/snoopdog.jpeg', 'CSS/musicPhotos/tupac.jpeg'], 'Snoop Doggy Dogg'),
-  new Question ('Which nine-minute, 1991 Guns N\' Roses hit was based on a short story by Del James?', ['Welcome To The Jungle', 'Sweet Child O\' Mine', 'Patience', 'November Rain'], [], 'November Rain'),
+  new Question ('Which nine-minute, 1991 Guns N\' Roses hit was based on a short story by Del James?', ['Welcome To The Jungle', 'Sweet Child O\' Mine', 'Patience', 'November Rain'], ['CSS/musicPhotos/theJungle.jpeg', 'CSS/musicPhotos/sweetchild.jpeg', 'CSS/musicPhotos/patience.jpeg', 'CSS/musicPhotos/november-rain.jpeg'], 'November Rain'),
   new Question ('I Want It That Way was a hit single from what 1999 Backstreet Boys album?', ['Millennium', 'Never Gone', 'Black & Blue', 'Unbreakable'], ['CSS/musicPhotos/millennium.jpeg', 'CSS/musicPhotos/never-gone.jpeg', 'CSS/musicPhotos/b&B.jpeg', 'CSS/musicPhotos/unbreakable.jpeg'], 'Millennium'),
   new Question ('In VH1\'s "Songs of the 90\'s", which song was voted #1?', ['Nirvana\'s "Smells Like Teen Spirit"', 'Tupac\'s "I Ain\'t Mad At Cha"', 'Beck\'s "I\'m A Loser"', 'Oasis\' "Wonderwall"'], ['CSS/musicPhotos/nirvana.jpeg', 'CSS/musicPhotos/tupac.jpeg', 'CSS/musicPhotos/beck.jpeg', 'CSS/musicPhotos/oasis.jpeg'], 'Nirvana\'s "Smells Like Teen Spirit"'),
 ]
@@ -116,12 +116,12 @@ function vgrightOrWrong(){
       if (vgameQuiz.questions[0].length === 0) {
         alert('Game over Your Score is ' + vgameQuiz.score)
       } else if (evt.target.innerHTML === vgameQuiz.questions[0][0].correctAnswer) {
-        console.log('Correct Answer');
+        alert('Correct Answer');
         vgameQuiz.score +=1;
         playerScore.innerHTML = 'Your Score ' + vgameQuiz.score;
         return vgRestOfQuestions()
       } else if (evt.target.innerHTML !== vgameQuiz.questions[0][0].correctAnswer) {
-        console.log('Wrong answer the correct answer is ' + vgameQuiz.questions[0][0].correctAnswer);
+        alert('Wrong answer the correct answer is ' + vgameQuiz.questions[0][0].correctAnswer);
         return vgRestOfQuestions()
       }
     })
@@ -135,12 +135,12 @@ function mrightOrWrong(){
       if (musicQuiz.questions[0].length <= 0) {
         alert('Game over Your Score is ' + musicQuiz.score)
       } else if (evt.target.innerHTML === musicQuiz.questions[0][0].correctAnswer) {
-        console.log('Correct Answer');
+        alert('Correct Answer');
         musicQuiz.score +=1;
         playerScore.innerHTML = 'Your Score ' + musicQuiz.score;
         return mRestOfQuestions()
       } else if(evt.target.innerHTML !== musicQuiz.questions[0][0].correctAnswer) {
-        console.log('Wrong answer the correct answer is ' + musicQuiz.questions[0][0].correctAnswer);
+        alert('Wrong answer the correct answer is ' + musicQuiz.questions[0][0].correctAnswer);
         return mRestOfQuestions()
       }
     })
